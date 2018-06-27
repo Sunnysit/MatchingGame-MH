@@ -311,6 +311,7 @@ class MonsterHunter{
         {
             default:
             case 1:
+            box.addClass('monster-rotate');
             box.find('.monster-cover').fadeOut();
             this.selectBox1 = box;
             this.selectCount++;
@@ -318,6 +319,7 @@ class MonsterHunter{
 
             case 2:
             let match = false;
+            box.addClass('monster-rotate');
             box.find('.monster-cover').fadeOut();
             this.selectBox2 = box;
             $('.monster-box').addClass('selected-box');
@@ -333,7 +335,8 @@ class MonsterHunter{
                     // that.currentHp += this.hpDeduction;
                     match = true;
                 }
-               
+                
+                $('.monster-box').removeClass('monster-rotate');
                 that.checkStatus(match);
                 
 
@@ -350,6 +353,7 @@ class MonsterHunter{
             if(!$(this).hasClass('matched'))
             {
                 $(this).find('.monster-cover').fadeIn();
+                 $(this).removeClass('monster-rotate');
             }
            
           });
