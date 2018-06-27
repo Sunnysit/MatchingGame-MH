@@ -1,0 +1,318 @@
+@charset "utf-8";
+/*
+ * @Author: Sunny Xue 
+ * @Date: 2018-06-01 21:30:28 
+ * @Last Modified by: Sunny Xue
+ * @Last Modified time: 2018-06-26 23:16:32
+ */
+ /* CSS Document */
+
+body{
+ 
+   background-image: url("../gameimg/bg_black.png");
+
+}
+
+.hunt-ground{
+    background-image: url("../gameimg/forest1280.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+a:hover,
+a:focus,
+a:active {
+    outline: none;
+    text-decoration: none;
+    color: white;   
+}
+
+
+.header-menu-container{
+    padding: 10px ;
+}
+.header-menu{
+  display: inline-block;
+  margin: 0 15px;
+}
+.main-window{
+    padding-bottom: 1%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+   
+}
+
+.game-window,.monster-info{
+     padding: 2% 0;
+}
+
+.game-title img{
+    width: 40%;
+}
+
+.player-info{
+    margin: 0;
+    padding-bottom:15px;
+    font-family: 'Bungee', cursive;
+    font-size: 24px;
+    color: white;
+}
+
+
+.hp-bar{
+    background-color: green;
+}
+.hp-yellow{
+    background-color: #ffc107;
+}
+.hp-red{
+    background-color: #dc3545;
+}
+
+.monster-box{
+    margin: .5rem 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.6s ease;
+}
+
+.monsterimg{
+    width: 70%;
+    box-shadow: 8px 8px 10px;
+    
+}
+
+
+
+.monster-cover{
+    background-image: url("../gameimg/monsters/mcover.jpg");
+    background-size: cover;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    transition: box-shadow 0.75s ease;
+}
+
+.monster-cover:hover{
+
+    box-shadow: #eeee34 0px 0px 10px 5px; 
+
+}
+
+.monster-rotate{
+    transform: rotateY(-180deg);
+}
+
+.monster-info-box{
+    margin: 0 18%;
+    padding: 2% 0;
+   background-color: rgba(154, 122, 54,.85);
+}
+
+.monster-info-box .col-4:hover .monster-info-img{
+
+    animation: rot 1s linear;
+  
+}
+@keyframes rot{
+ 0%{
+        transform: scale(0.8) rotate(-30deg);
+        
+    }
+    25%{
+       transform:  rotate(30deg);
+    }
+    50%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0);
+      
+    }
+}
+.monster-name{
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+.selected-box{
+    pointer-events: none;
+}
+
+.matched{
+    animation: boom 1s linear;
+    pointer-events: none;
+}
+
+@keyframes boom {
+    0%{
+        transform: scale(1.2) rotate(-45deg) rotateY(180deg);
+        
+    }
+    25%{
+       transform:  rotate(45deg);
+    }
+    50%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: scale(1) rotate(0) ;
+      
+    }
+}
+
+/* Greywall and Popup-info styles-----------------------start */
+
+.greywall{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 13;
+    color: #fff;
+    display: none;
+    
+}
+
+.game-banner{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    background-image: url('../gameimg/bg1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 12;
+    /* display: none; */
+}
+
+.banner-menu{
+    margin-bottom: 20px;
+}
+
+.popup-info{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* display: none; */
+}
+
+.game-level-select{
+    display: none;
+
+}
+
+.level-select-title{
+    margin-top: 25%;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.level-img{
+    border: 4px solid white;
+    border-radius: 10px;
+    margin: 80px auto 40px;
+    transition: all 1s ease; 
+    cursor: pointer;
+    display: block;
+}
+
+.level-img:hover {
+    border: 4px solid #eeee34;
+    transform: scale(1.2);
+}
+
+.level-info-box{
+  display: block;
+  height: 300px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+
+.level-star{
+    color: #eeee34;
+    padding: 5px;
+}
+.level-info{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.game-instruction{
+  display: none;
+}
+.game-instruction h2{
+  
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-top: 15%;
+}
+
+
+.gameover-box{
+    background-image: url("../gameimg/parchment.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: block;
+    padding: 15% 10%;
+    margin-top: 20%;
+    color: black;
+    display: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.lose-group, .win-group{
+    display: none;
+}
+
+.overrestart-btn {
+    display: none;
+}
+
+.gameover-box-title-img{
+    width: 25%;
+}
+
+#finalScore{
+    color: #f73333;
+    display: block;
+    font-family: 'Bungee', cursive;
+    text-shadow: 3px 3px 5px black;
+}
+
+/* Greywall and Popup-info styles-----------------------end */
+
+
+
+.music-section{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 25;
+
+}
+
+.musicicon{
+    width: 40px;
+    cursor: pointer;
+
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+
+}
+
+footer p{
+    margin: 0;
+}
