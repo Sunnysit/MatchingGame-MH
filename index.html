@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matching Game Monster Hunter</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/buttonstyles.css">
+    <link rel="stylesheet" href="styles/basic.css">
+
+
+</head>
+<body>
+    <header class="container">
+        <div class="row justify-content-center">
+            
+                <div class="header-menu-container col-8 text-center">
+                        
+                       
+                             <div class="restart-btn header-menu hs-wrapper classic" ><a class="hs-button classic" href="#0"><span class="hs-border classic"><span class="hs-text classic">Restart</span></span></a></div>
+              
+                              <div class="ins-btn header-menu hs-wrapper green" ><a class="hs-button green" href="#0"><span class="hs-border green"><span class="hs-text green">Instruction</span></span></a></div>
+                              <div class="home-btn header-menu hs-wrapper gold" ><a class="hs-button gold" href="#0"><span class="hs-border gold"><span class="hs-text gold">Quit</span></span></a></div>
+                           
+                       
+                </div>
+        </div>
+    </header>
+
+   
+
+    <main class="container main-window">
+        
+
+        <section class="container game-window">
+            <div class="player-info row justify-content-between">
+                <div class="player-hp col-5 offset-2">
+                    <p>HP:</p>
+                        <div class="progress">
+                                <div class="hp-bar progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                  <span id="hp-show">100%</span>
+                                </div>
+                              </div>
+
+                </div>
+                <div class="player-score col-3 ">
+                    <p>Score:<span id="score">100</span></p>
+                </div>
+            </div>
+            <div class="monster-box-container">
+
+                <div class="row justify-content-center">
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                                <div class="monster-cover"></div>
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                    
+                </div>
+                
+                <div class="row justify-content-center">
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                    
+                </div>
+                
+                    
+                <div class="row justify-content-center">
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                        <div class="monster-box col-2 text-center">
+                                <img src="gameimg/monsters/Anjanath.jpg" alt="Anjanath" class="monsterimg img-fluid">
+                        </div>
+                       
+                </div>
+                
+
+            </div>
+        </section>
+        <section class="container monster-info">
+                <div class="monster-info-box row justify-content-between">
+                  
+                         <div class="col-4 text-center" style="  overflow: hidden;">
+                                <img  src="gameimg/cat.png" alt="Monster-Img" class="monster-info-img img-fluid">
+                        </div>    
+                        <div class=" col-8 text-center">
+                                <h2 class="monster-name text-center">Hunter!!</h2>
+                                <p class="monster-info-text01">Try your best to defeat all monsters!!</p>
+                                <p class="monster-info-text02"></p>
+                        </div>  
+                </div>
+        </section>
+    </main>
+
+    <div class="game-banner">
+                <div  class="title text-center">
+                  <img src="gameimg/logo.png" alt="logo" class="img-fluid">
+                </div>
+                <div class="container">
+                        <div class="banner-menu row justify-content-center">
+                        <div class="hs-wrapper gold" id="banner-start-btn"><a class="hs-button gold" href="#0"><span class="hs-border gold"><span class="hs-text gold">Start</span></span></a></div>
+                                                
+                        </div>
+                        <div class="banner-menu row justify-content-center">
+                         <div class="ins-btn hs-wrapper gold" ><a class="hs-button gold" href="#0"><span class="hs-border gold"><span class="hs-text gold">Instruction</span></span></a></div>
+                        </div>     
+                                             
+                </div>
+                
+
+    </div>
+
+    <div class="greywall">
+             
+             <div class="popup-info container">
+
+                <section class="game-level-select">
+                       
+                        <h2 class="level-select-title text-center">Select Hunting Ground</h2>
+                        
+                        <div class="row justify-content-center">
+                                <div class="level col-4 text-center" data-level="l1">
+                                        <img class="level-img img-fluid" src="gameimg/map/monster-hunter-world-ancient-forest-location-information-300.jpg" alt="ancient-forest">
+                                      
+                                </div>
+                                <div class="level col-4 text-center" data-level="l2">
+                                        <img class="level-img img-fluid" src="gameimg/map/coral-highland-monster-hunter-world-wiki-mhw-locations.jpg" alt="coral-highland">
+                                              
+                                </div>
+                                <div class="level col-4 text-center" data-level="l3">
+                                         <img class="level-img img-fluid" src="gameimg/map/rotten-vale-monster-hunter-world-wiki-mhw-location.jpg" alt="rotten-vale">
+                                                      
+                                </div>
+                        </div>
+                        <div class="row justify-content-center">
+                                        <div class="level-info-box col-8 text-center">
+                                        <h3 class="level-name"></h3>
+                                        <h4 class="level-dif"> </h4>
+                                        <p class="level-info">
+                                                       
+                                        </p>
+                                        </div>
+                        </div>
+                       
+                </section>
+
+                <section class="game-instruction">
+                        <h2 class="text-center">How to Play</h2>
+                        <div class="instruction-text row justify-content-center">
+                                 <div class="col-4 text-center">
+                                    <img class="img-fluid instruction-img" src="gameimg/huntground.png" alt="hunting grounds">
+                                 </div>
+                                 <div class="col-6 align-self-center">
+                                    <p class="lead"><strong>1.</strong> Select hunting grounds to start. Different grounds mean different levels. </p>
+                                 </div>
+                        </div>
+                         <div class="instruction-text row justify-content-center">
+                                 <div class="col-4 text-center">
+                                    <img class="img-fluid instruction-img" src="gameimg/show-monster.png" alt="monster cover convert monster">
+                                 </div>
+                                 <div class="col-6 align-self-center">
+                                    <p class="lead"><strong>2.</strong> Click the black monster icon to find out the hidden monster.</p>
+                                 </div>
+                        </div>
+                          <div class="instruction-text row justify-content-center">
+                                 <div class="col-4 text-center">
+                                    <img class="img-fluid instruction-img" src="gameimg/m-match.png" alt="monster cover convert monster">
+                                 </div>
+                                 <div class="col-6 align-self-center">
+                                    <p class="lead"><strong>3.</strong> Each turn you can select 2 monsters. If the two monsters are the same, you defeat them and gain points.</p>
+                                 </div>
+                        </div>
+                        <div class="instruction-text row justify-content-center">
+                                 <div class="col-4 text-center">
+                                    <img class="img-fluid instruction-img" src="gameimg/m-unmatch.png" alt="monster cover convert monster">
+                                 </div>
+                                 <div class="col-6 align-self-center">
+                                    <p class="lead"><strong>4.</strong> If they are different monsters, you will get hurt and lose Health Point.</p>
+                                 </div>
+                        </div>
+                        <div class="instruction-text row justify-content-center">
+                           
+                                 <div class="col-12 text-center align-self-center">
+                                    <p class="lead"><strong>WIN:</strong> Find out all matching monsters and make as few mistakes as possible.</p>
+                                    <p class="lead"><strong>LOSE:</strong> Health Point reach 0%.</p>
+                                   
+                                 </div>
+                        </div>
+           
+                        <div class="row">
+                               <div class="text-center col-12">
+                              
+                                    <div class="btn-close header-menu hs-wrapper classic" ><a class="hs-button classic" href="#0"><span class="hs-border classic"><span class="hs-text classic">Got it</span></span></a></div>
+                                </div>
+                        </div>
+                </section>
+
+                <section class="gameover-box">
+                        <div class="gameover-box-title text-center">
+                                <img class="gameover-box-title-img " src="gameimg/quest-clear.png" alt="quest-info">
+                        </div>
+                        <div class="gameover-box-info">
+                                        <h2 class="gameover-box-info-title text-center">Yeah! You Win!!</h2>
+                                        <h2 class="text-center">
+                                        Your Score: <span id="scoreCount"></span> <span id="finalScore">0</span>
+                                        </h2>
+                                        <div class="lose-group text-center">
+                                        <div class="restart-btn header-menu hs-wrapper classic" ><a class="hs-button classic" href="#0"><span class="hs-border classic"><span class="hs-text classic">Restart</span></span></a></div>
+                                        <div class="home-btn header-menu hs-wrapper gold" ><a class="hs-button gold" href="#0"><span class="hs-border gold"><span class="hs-text gold">Quit</span></span></a></div>
+                                        </div>
+                                        <div class="win-group text-center">
+                                                <div class="nextlevel-btn header-menu hs-wrapper classic" ><a class="hs-button classic" href="#0"><span class="hs-border classic"><span class="hs-text classic">Next</span></span></a></div>
+                                                <div class="home-btn header-menu hs-wrapper gold" ><a class="hs-button gold" href="#0"><span class="hs-border gold"><span class="hs-text gold">Quit</span></span></a></div>
+                                        </div>
+                        </div>
+
+                </section>
+
+
+             </div>
+        
+    </div>
+    <div class="music-section">
+                <img class="musicicon music-on" src="gameimg/speaker.png" alt="music-icon">
+                <audio id="bgmusic" loop autoplay>
+                <source src="music/02 - Main Menu.mp3"/>
+                <!-- <source src="music/01 - Proof of a Hero ~ Monster Hunter- World version.mp3"/> -->
+                Your browser does not support this audio format.
+                </audio>    
+    </div>
+    <footer class="sr-only">
+      <p>For euducation only</p>
+      <p>&copy; 2018 CODE AND DESIGN BY SUNNY XUE</p>
+    </footer>
+    <script src="script/jquery.js"></script>
+    <script src="script/game.js"></script>
+    <script src="script/custom.js"></script>
+</body>
+</html>
