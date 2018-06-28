@@ -308,7 +308,7 @@ a:active {
 
 footer{
     text-align: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     position: absolute;
     width: 100%;

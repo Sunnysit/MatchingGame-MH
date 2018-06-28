@@ -2,7 +2,7 @@
  * @Author: Sunny Xue 
  * @Date: 2018-06-18 22:27:39 
  * @Last Modified by: Sunny Xue
- * @Last Modified time: 2018-06-26 23:39:07
+ * @Last Modified time: 2018-06-27 22:54:34
  */
 class MonsterHunter{
 
@@ -173,6 +173,8 @@ class MonsterHunter{
 
     gameStart(){
         
+      
+      
         this.gameRestart();
 
         $(window).scrollTop(0)
@@ -184,6 +186,21 @@ class MonsterHunter{
     }
 
     gameEnd(key){
+
+        if(isMute)
+        {
+            startMusic.pause();
+            bgMusic.pause();
+            overMusic.pause();
+        }
+        else{
+
+            bgMusic.pause();
+            startMusic.pause();
+            overMusic.load();
+            overMusic.play();
+        }
+
         $(".greywall").fadeIn();
         $(".gameover-box").fadeIn();
         $('.lose-group, .win-group').hide();
@@ -232,6 +249,19 @@ class MonsterHunter{
             $('.monster-info-text01').html('Try your best to defeat all monsters!!');
             $('.monster-info-text02').html('');
             $('.monster-info-img').attr("src",`gameimg/cat.png`);
+            
+            if(isMute)
+            {
+                startMusic.pause();
+                bgMusic.pause();
+                overMusic.pause();
+            }
+            else{
+        
+                startMusic.play();
+                bgMusic.pause();
+                overMusic.pause();
+            }
     }
 
 
@@ -557,3 +587,29 @@ class MonsterHunter{
 
      //Level select functions -------------------------------end
 
+//Music Control
+const bgMusic = $("#bgmusic")[0];
+const startMusic = $("#start-music")[0];
+const overMusic = $("#gameover-music")[0];
+let isMute =false;
+$('.musicicon').on('click',function(){
+  
+    $(this).toggleClass("music-on");
+    if($(this).hasClass('music-on'))
+    {
+        $(this).attr('src','gameimg/speaker.png');
+        isMute=false;
+        if (bgMusic.paused)
+        { 
+            bgMusic.play(); 
+        }
+        
+    }
+    else{
+        $(this).attr('src','gameimg/mute.png');
+        bgMusic.pause();
+        startMusic.pause();
+        overMusic.pause();
+        isMute=true;
+    }
+});

@@ -2,7 +2,7 @@
  * @Author: Sunny Xue 
  * @Date: 2018-06-01 21:30:31 
  * @Last Modified by: Sunny Xue
- * @Last Modified time: 2018-06-26 17:54:08
+ * @Last Modified time: 2018-06-27 22:48:08
  */
 
 $('.header-menu a').on('click',function(){
@@ -28,6 +28,21 @@ $('.restart-btn').on('click',function(){
 
 
 $('.home-btn').on('click',function(){
+    
+  
+            if(isMute)
+            {
+                startMusic.pause();
+                bgMusic.pause();
+                overMusic.pause();
+            }
+            else{
+                bgMusic.load();
+                startMusic.pause();
+                overMusic.pause();
+                bgMusic.play();
+            }
+   
 
     $('.game-banner').fadeIn();
     setTimeout(function(){
@@ -49,19 +64,5 @@ $('.btn-close').on('click',function(){
   
 });
 
-$('.musicicon').on('click',function(){
-    const bgMusic = $("#bgmusic")[0];
-    $(this).toggleClass("music-on");
-    if($(this).hasClass('music-on'))
-    {
-        $(this).attr('src','gameimg/speaker.png');
-        if (bgMusic.paused){ 
-            bgMusic.play(); 
-        }
 
-    }
-    else{
-        $(this).attr('src','gameimg/mute.png');
-        bgMusic.pause();
-    }
-});
+
