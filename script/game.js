@@ -2,8 +2,9 @@
  * @Author: Sunny Xue 
  * @Date: 2018-06-18 22:27:39 
  * @Last Modified by: Sunny Xue
- * @Last Modified time: 2018-06-27 22:54:34
+ * @Last Modified time: 2018-07-02 15:54:08
  */
+
 class MonsterHunter{
 
     //Game Constructor
@@ -29,6 +30,7 @@ class MonsterHunter{
 
         this.monsterNest = [];
 
+        //Array stock all monsters information
         this.monsterFamily = [
             {
                 mid:"m01",
@@ -137,6 +139,7 @@ class MonsterHunter{
 
             ]
         
+        //Array Stock Level Information
         this.huntingGround = [
             {
                 name:"Ancient Forest",
@@ -173,10 +176,7 @@ class MonsterHunter{
 
     gameStart(){
         
-      
-      
         this.gameRestart();
-
         $(window).scrollTop(0)
         this.createImages(this.monsterFamily);
         this.shuffleImages();
@@ -276,6 +276,7 @@ class MonsterHunter{
        
     }
 
+    
     shuffleImages(){
 
 		let counter = this.monsterNest.length;
@@ -300,8 +301,7 @@ class MonsterHunter{
         
     }
 
- 
-
+    //Add Images to Game Container
     addImages(){
         
         const repeat1 =this.numBoxes/this.cols;
@@ -332,7 +332,7 @@ class MonsterHunter{
 
 
     }
-
+    
     gameTurn(box){
         //make sure 1 box cannot be selected twice
         box.addClass('selected-box');
@@ -362,7 +362,6 @@ class MonsterHunter{
 
                     that.getScore += 100;
                     that.remainBoxes -= 2;
-                    // that.currentHp += this.hpDeduction;
                     match = true;
                 }
                 
@@ -377,6 +376,7 @@ class MonsterHunter{
        
     }
    
+    //Reset After Select Twice
     resetTurn(){
         $(".monster-box").each(function(i){
                 
@@ -427,6 +427,7 @@ class MonsterHunter{
 
     }
 
+    //Update Current HP
     upDateUI()
     {
         this.hp = this.currentHp;
@@ -445,7 +446,7 @@ class MonsterHunter{
         $('#score').html(this.getScore);
     }
 
-  
+    //Show Monster Info When Matching 2 monsters
     showMonsterInfo(mid)
     {   
         for(let i=0;i<this.monsterFamily.length;i++)
@@ -464,9 +465,9 @@ class MonsterHunter{
 }
 
 
-    const mg = new MonsterHunter();
+const mg = new MonsterHunter();
 
-
+    //Start a new game/show the level selection 
     $('#banner-start-btn').on('click',function(){
         
         $('header').css('opacity','0');
@@ -478,6 +479,7 @@ class MonsterHunter{
      
     });
 
+    //Jump to Different Level 
     $('.nextlevel-btn').on('click',function(){
         
         let levelBgUrl = "gameimg/Coral-Highlands.jpg";
@@ -493,7 +495,7 @@ class MonsterHunter{
             levelBgUrl = "gameimg/rotten-vale.jpg";
             break;
             case "l3": 
-            console.log('win');
+            //Already finsh all the levels, No next level.
             break;
             
         }
@@ -512,7 +514,7 @@ class MonsterHunter{
      
     });
 
-    //Level select functions -------------------------------start
+    //Level Select Functions -------------------------------Start
     let currentLevel; //Record user current select level 
     $('.level').on('click',function(){
     
@@ -585,9 +587,9 @@ class MonsterHunter{
     });
 
 
-     //Level select functions -------------------------------end
+     //Level Select Functions -------------------------------End
 
-//Music Control
+//Music Control ------------------------------------Start
 const bgMusic = $("#bgmusic")[0];
 const startMusic = $("#start-music")[0];
 const overMusic = $("#gameover-music")[0];
@@ -613,3 +615,56 @@ $('.musicicon').on('click',function(){
         isMute=true;
     }
 });
+
+//Music Control ------------------------------------End
+
+
+//Restart a new game/show the level selection 
+$('.restart-btn').on('click',function(){
+    
+    $('.gameover-box').hide();
+    $('.greywall').slideDown();
+    $('.game-level-select').fadeIn();
+
+});
+
+//Go Back to Home Banner
+$('.home-btn').on('click',function(){
+    
+    if(isMute)
+        {
+            startMusic.pause();
+            bgMusic.pause();
+            overMusic.pause();
+        }
+    else{
+            bgMusic.load();
+            startMusic.pause();
+            overMusic.pause();
+            bgMusic.play();
+        }
+   
+
+    $('.game-banner').fadeIn();
+    setTimeout(function(){
+        $('.gameover-box').hide();
+        $('.game-instruction').hide();
+        $('.greywall').hide();
+    },10);
+});
+
+//Show/Hide Instruction -----------------Start
+
+$('.ins-btn').on('click',function(){
+
+    $('.greywall').slideDown();
+    $('.game-instruction').fadeIn();
+});
+
+$('.btn-close').on('click',function(){
+    $('.game-instruction').hide();
+    $('.greywall').slideUp();
+  
+});
+
+//Show/Hide Instruction -----------------End
