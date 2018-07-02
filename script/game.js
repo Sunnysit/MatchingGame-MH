@@ -503,6 +503,7 @@ const mg = new MonsterHunter();
         setTimeout(()=>{
             $('.hunt-ground').css("background-image",`url("${levelBgUrl}")`);
             },10);
+            $('.gameover-box').hide();
             $('.greywall').slideUp();
              mg.gameStart();
              mg.boxes.click(function(){
